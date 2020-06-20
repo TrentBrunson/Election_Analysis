@@ -16,6 +16,5 @@ Tasks:
 - Software: Python 3.8.3, Visual Studio Code 1.46.1
 
 ##Summary 
-
 See election_analysis.txt file
 
