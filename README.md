@@ -1,7 +1,7 @@
 # Election_Analysis
 TrentBrunson/Election_Analysis
 ---
-##Project Overview
+## Project Overview
 Colorado Elections Board asked to have their results audited.
 
 Tasks:
@@ -11,10 +11,10 @@ Tasks:
 4. Calculate the percentage of votes by candidate.
 5. Determine the winner of the election by plurality.
 
-##Resources
+## Resources
 - Data Source: election_results.csv
 - Software: Python 3.8.3, Visual Studio Code 1.46.1
 
-##Summary 
+## Summary 
 See election_analysis.txt file
 
