@@ -18,3 +18,11 @@ Tasks:
 ## Summary 
 See election_analysis.txt file
 
+## Challenge Overview
+The Elections Board now wants to verify voter turnout by county.
+
+## Challenge Summary
+Determined number of votes cast in each county.
+Determined how much each county contributed to the election totals.
+Reported which county had the largest turnout.
+These are saved in the election_results.txt file.
