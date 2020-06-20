@@ -6,13 +6,58 @@ file_to_load = os.path.join("Resources/election_results.csv")
 # Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
+#declarations
+total_votes = 0 #set vote counter
+candidate_options = [] #declaring list to hold list of candidates
+candidate_votes = {} #delcaring dictionary where 'candidate name' is 'key', and 'votes' is 'value'
+winning_candidate = ""
+winning_count = 0
+winning_percentage = 0
+
+#{'candidate_name1':votes, 'candidate_name2':votes, 'candidate_name3':votes}
+
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
 
     # Read and print the header row.
     headers = next(file_reader)
-    print(headers)
+
+    # Print each row in the CSV file.
+    for row in file_reader:
+        total_votes +=1 #2-add totals to vote count
+        candidate_name = row[2] #print candidate name for each row
+        if candidate_name not in candidate_options:
+            candidate_options.append(candidate_name) #add candidate name to cadidate list
+            candidate_votes[candidate_name] = 0 #begin tracking the candidate's vote count
+            
+        candidate_votes[candidate_name] += 1 #looping thru rows and incrementing candidate votes in dictionary each time name is seen
+
+for candidate in candidate_votes:
+    votes = candidate_votes[candidate] #retrieve vote count of candidate
+    vote_percentage = int(votes)/int(total_votes)*100
+    print(f'{candidate} received {vote_percentage:.1f}% of the vote.')
+
+    #report the winning candidate name, vote totals and percentage
+    if (votes>winning_count) and (vote_percentage>winning_percentage):
+        winning_percentage = vote_percentage
+        winning_count = votes
+        winning_candidate = candidate
+
+winning_candidate_summary = (
+    f"---------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winning Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {winning_percentage:.1f}%\n"
+    f"---------------------------\n")
+print(winning_candidate_summary)
+
+
+#print(candidate_votes)
+#print(vote_percentage)
+
+
+
 
 # Using the with statement open the file as a text file.
 with open(file_to_save, "w") as textFile:
