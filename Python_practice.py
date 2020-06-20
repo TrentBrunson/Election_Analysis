@@ -231,11 +231,10 @@ voting_data = [{"county":"Arapahoe", "registered_voters": 422829},
 {"county":"Denver", "registered_voters": 463353},
 {"county":"Jefferson", "registered_voters": 432438}]
 
-voting_data = {"Arapahoe": 422829, "Denver": 463353, "Jefferson": 432438}
+
 for county, voters in counties_dict.items():
     print(f"{county} county has {voters} registered voters.") 
 print()
-
 
 # Import the datetime class from the datetime module.
 import datetime
@@ -243,3 +242,16 @@ import datetime
 now = datetime.datetime.now()
 # Print the present time.
 print("The time right now is ", now)
+
+print()
+
+# Import the datetime class from the datetime module.
+import datetime as dt
+# Use the now() attribute on the datetime class to get the present time.
+now = dt.datetime.now()
+now = now.strftime('%M, %D, %H, %S')
+
+# format(now, '.1f')
+# Print the present time.
+print("The time right now is ", now) #how to limit this to 1 decimal place???
+
