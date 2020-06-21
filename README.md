@@ -28,7 +28,11 @@ Reported which county had the largest turnout.
 These are saved in the election_results.txt file.
 
 ### Analysis
-Request was for vote counts by county to assess voter turnout.
+Additional request was for vote counts by county to assess voter turnout.
+
+Denver county had the largest total number of voters show up on election day, 
+with 306,055 votes.
+
 Further questions need to be answered to evaluate voter turnout.
 Contextualizing the data with voter-eligible and registered-voter populations
 or incorporating key data points in a longitudinal study will help to
