@@ -26,3 +26,13 @@ Determined number of votes cast in each county.
 Determined how much each county contributed to the election totals.
 Reported which county had the largest turnout.
 These are saved in the election_results.txt file.
+
+### Analysis
+Request was for vote counts by county to assess voter turnout.
+Further questions need to be answered to evaluate voter turnout.
+Contextualizing the data with voter-eligible and registered-voter populations
+or incorporating key data points in a longitudinal study will help to
+transform the curated data into information to support evaluation and 
+future decision making.  Recommend considering these few, easy-to-implement
+methods to transform the data into actionable information.
+

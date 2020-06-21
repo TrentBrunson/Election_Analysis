@@ -21,10 +21,8 @@ winning_percentage = 0
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
 
-    # Read and print the header row.
-    headers = next(file_reader)
+    headers = next(file_reader) #skip header row
 
-    # Print each row in the CSV file.
     for row in file_reader:
         total_votes +=1 #2-add totals to vote count
         candidate_name = row[2] #print candidate name for each row
@@ -34,6 +32,7 @@ with open(file_to_load) as election_data:
             
         candidate_votes[candidate_name] += 1 #looping thru rows and incrementing candidate votes in dictionary each time name is seen
 
+# add county totals to this loop.  use same dictionary.
 for candidate in candidate_votes:
     votes = candidate_votes[candidate] #retrieve vote count of candidate
     vote_percentage = int(votes)/int(total_votes)*100
@@ -46,26 +45,12 @@ for candidate in candidate_votes:
         winning_count = votes
         winning_candidate = candidate
 
-#winning_candidate_summary = (
-    #f"---------------------------\n"
-    #f"Winner: {winning_candidate}\n"
-    #f"Winning Vote Count: {winning_count:,}\n"
-    #f"Winning Percentage: {winning_percentage:.1f}%\n"
-    #f"---------------------------\n")
-#print(winning_candidate_summary)
-
-
-#print(candidate_votes)
-#print(vote_percentage)
 
 # Using the with statement to open the file as a text file.
 with open(file_to_save, "w") as textFile:
 
-    # Write some data to the file.
-    textFile.write("Counties in the Election\n------------------------\n")
-    # Write three counties to the file.
-    textFile.write("Arapahoe\nDenver\nJefferson\n")
-    # Print the final vote count to the terminal.
+    # Write some data to the file and screen
+    # Print the final vote count to the terminal
     election_results = (
         f"\nElection Results\n"
         f"-------------------------\n"
@@ -73,7 +58,13 @@ with open(file_to_save, "w") as textFile:
         f"-------------------------\n")
     print(election_results, end="")
     textFile.write(election_results)  #save the final vote count to the text file.
+    
+    #print county votes to screen
 
+    #write County Votes: to file
+    textFile.write("Counties in the Election\n------------------------\n")
+    # Write three counties to the file.
+    textFile.write("Arapahoe\nDenver\nJefferson\n")
 
     for candidate in candidate_votes:
         # Retrieve vote count and percentage.
